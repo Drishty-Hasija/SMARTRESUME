@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+# Secrets and local state
+.env
+backend/smartresume.db
+backend/uploads/*
+!backend/uploads/.gitkeep
+# Node
+node_modules/
+frontend/dist/
+.DS_Store

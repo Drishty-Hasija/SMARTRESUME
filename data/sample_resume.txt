@@ -1,0 +1,49 @@
+Aarav Sharma
+aarav.sharma@example.com | +91 98765 43210 | New Delhi, India
+linkedin.com/in/aarav-sharma | github.com/aarav-sharma
+
+SUMMARY
+Final-year Computer Science student interested in machine learning, natural language processing and full-stack web development. Strong communication and teamwork skills from hackathons and campus projects. Looking for a summer internship where I can build products end to end.
+
+EDUCATION
+B.Tech in Computer Science and Engineering, Delhi Technological University, 2022 - 2026
+CGPA: 8.6/10
+Relevant coursework: Data Structures, Algorithms, Database Management Systems, Machine Learning
+
+TECHNICAL SKILLS
+Languages: Python, JavaScript, Java, C++, Dart, SQL
+Web: HTML, CSS, React, Node.js, Flask, REST APIs
+Data / AI: Machine Learning, NLP, Pandas, NumPy, Scikit-learn, NLTK, spaCy
+Databases: MySQL, PostgreSQL, MongoDB, SQLite
+Design & Tools: Figma, Canva, Git, GitHub, Postman
+
+EXPERIENCE
+Software Development Intern, Brightpath Technologies, Jun 2025 - Aug 2025
+- Built a React dashboard that visualised sales data for 3 internal teams, reducing weekly reporting time by 40%
+- Developed 6 REST APIs with Flask and MySQL, serving about 1,200 requests per day
+- Collaborated with a team of 5 engineers using Git and Agile sprints
+
+UI/UX Design Intern, Pixel Studio, Dec 2024 - Jan 2025
+- Designed 12 mobile screens in Figma and tested prototypes with 15 users
+- Worked on wireframes for the onboarding flow
+- Improved onboarding completion by 18% after redesigning the sign-up flow
+
+PROJECTS
+SmartNotes - Flutter note-taking app
+- Developed a cross-platform app in Flutter and Dart with SQLite offline storage
+- Implemented search and tagging, used by 80 classmates during a semester pilot
+
+Movie Review Sentiment Classifier
+- Trained a logistic regression model on 50,000 reviews using NLTK, TF-IDF and scikit-learn, reaching 88% accuracy
+- A Flask API and a small React front end to test reviews in the browser
+
+CERTIFICATIONS
+- Machine Learning Specialization, Coursera
+- Google UX Design Certificate, Coursera
+
+ACHIEVEMENTS
+- Finalist, Smart India Hackathon 2024
+- Led a team of 4 to build a campus event app, 500+ downloads
+
+LANGUAGES
+English, Hindi

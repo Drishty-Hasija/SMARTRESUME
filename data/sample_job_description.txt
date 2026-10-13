@@ -1,0 +1,25 @@
+Junior Full Stack Developer (Machine Learning)
+
+About the role
+We are looking for a Junior Full Stack Developer to join our product team and help build web applications that use machine learning to give recruiters better insights.
+
+Responsibilities
+- Build and maintain responsive web interfaces using React and JavaScript
+- Develop REST APIs with Python and Flask or FastAPI
+- Work with SQL databases such as MySQL and PostgreSQL
+- Integrate machine learning and NLP models into production services
+- Collaborate with designers and use Git for version control
+- Deploy services using Docker on AWS
+
+Requirements
+- Bachelor's degree in Computer Science or a related field, or currently pursuing one
+- 1+ years of experience with Python and JavaScript, internships and personal projects count
+- Strong understanding of data structures and algorithms
+- Experience with Git and GitHub
+- Good communication and teamwork skills
+
+Nice to have
+- Experience with Kubernetes
+- Familiarity with CI/CD pipelines
+- Knowledge of TypeScript
+- Experience with Agile methodologies
