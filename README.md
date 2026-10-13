@@ -390,29 +390,8 @@ No secrets are needed. All settings have defaults; see `backend/.env.example`.
 
 Frontend (optional, Vite env): `VITE_API_URL` to call a backend on another origin; `VITE_PROXY_TARGET` to point the dev-server proxy somewhere other than `http://localhost:8000`.
 
-## 12. Running the backend
 
-```bash
-cd backend
-uvicorn app.main:app --reload --port 8000
-```
-
-Wait for `SmartResume API ready` in the log (the first start loads the NLP models and may download NLTK data). Then open `http://localhost:8000/docs`. The database and tables are created automatically.
-
-## 13. Running the frontend
-
-In a second terminal:
-
-```bash
-cd frontend
-npm run dev
-```
-
-Open **http://localhost:5173**. The dev server proxies `/api` to the backend on port 8000.
-
-Production build: `npm run build`, then `npm run preview` (serves on `http://localhost:4173` with the same proxy).
-
-## 14. Sample usage
+## 13. Sample usage
 
 Sample files are in `data/`: `sample_resume.pdf` (also `.docx` and `.txt`) and `sample_job_description.txt`.
 
@@ -459,7 +438,7 @@ npm test
 
 **Not covered:** visual appearance and responsive layout are not machine-tested. Check them in a browser (see section 16).
 
-## 16. Limitations
+## 14. Limitations
 
 Stated plainly so they can be discussed honestly.
 
@@ -478,7 +457,7 @@ Stated plainly so they can be discussed honestly.
 - **The UI was not checked in a real browser during development.** The build and component tests pass, but spacing and responsive behaviour should be reviewed visually on desktop, tablet and phone widths.
 - No dark mode (optional in the design spec).
 
-## 17. Future scope
+## 15. Future scope
 
 - OCR for scanned PDFs (e.g. Tesseract).
 - Semantic matching with sentence embeddings, shown alongside TF-IDF so it stays explainable.
@@ -489,7 +468,7 @@ Stated plainly so they can be discussed honestly.
 - Export of the report as PDF; tailored resume rewriting suggestions per bullet.
 - Dark mode and full localisation.
 
-## 18. Deviations from the original specification
+## 16. Deviations from the original specification
 
 Where the spec could not be followed exactly, the closest working alternative was used:
 
@@ -503,53 +482,3 @@ Where the spec could not be followed exactly, the closest working alternative wa
 | Language | JavaScript (not TypeScript) | Easier to explain in a viva; the spec allowed either. |
 | Optional dark mode | Not implemented | Marked optional in `design.md`. |
 | Upload processing steps | Upload progress is real; later steps are timer-advanced while one request runs | The backend exposes a single analysis call, not a streamed status. |
-
-## 19. Project structure
-
-```text
-smartresume/
-├── backend/
-│   ├── app/
-│   │   ├── main.py                  FastAPI app, CORS, error handlers
-│   │   ├── config.py                Settings from environment
-│   │   ├── api/                     routes: resumes, jobs, match, overview, serializers
-│   │   ├── models/entities.py       SQLAlchemy models
-│   │   ├── schemas/api.py           Pydantic request/response models
-│   │   ├── database/session.py      engine, session, init_db
-│   │   ├── services/
-│   │   │   ├── document_parser.py   validation + PDF/DOCX/TXT extraction
-│   │   │   ├── preprocessing.py     cleaning, tokenization, POS, stop-words, lemmas
-│   │   │   ├── section_detector.py  resume sections + contact details
-│   │   │   ├── skill_extractor.py   dictionary-driven skills
-│   │   │   ├── entity_extractor.py  spaCy NER + rules
-│   │   │   ├── keyword_extractor.py TF-IDF keywords
-│   │   │   ├── resume_analyzer.py   scoring + suggestions
-│   │   │   ├── jd_analyzer.py       job description analysis
-│   │   │   ├── job_matcher.py       TF-IDF + cosine matching
-│   │   │   ├── workflows.py         orchestration + persistence
-│   │   │   ├── storage.py           safe file storage
-│   │   │   └── nlp_resources.py     NLTK / spaCy loading
-│   │   └── utils/errors.py          user-facing errors
-│   ├── requirements.txt
-│   ├── pytest.ini
-│   └── .env.example
-├── frontend/
-│   ├── src/
-│   │   ├── components/              Button, Card, FileUploader, DataTable, ScoreCard, …
-│   │   ├── pages/                   Landing, Dashboard, Upload, Analysis, JobMatch, History, …
-│   │   ├── layouts/AppLayout.jsx    sidebar, top bar, mobile navigation
-│   │   ├── hooks/  services/  utils/
-│   │   └── test/                    Vitest tests + real API fixtures
-│   ├── tailwind.config.js           design tokens from design.md
-│   └── package.json, vite.config.js
-├── data/
-│   ├── skills.json                  editable skill dictionary
-│   ├── sample_resume.{pdf,docx,txt}
-│   ├── sample_job_description.txt
-│   └── generate_samples.py
-├── tests/                           backend tests
-├── scripts/capture_fixtures.sh      regenerate frontend test fixtures from a live backend
-├── docs/                            viva guide
-├── design.md                        (place your design.md here)
-└── README.md
-```
